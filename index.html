@@ -1,88 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/css/splide.min.css"
-  />
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/css/splide.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/js/splide.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    <script defer src="js/menu-burger.js"></script>
+    <script defer src="js/carousel.js"></script>
+
     <title>Coralie Roux Ostéopathe animalier</title>
-</head>
+  </head>
 
+  <body>
+    <header>
+      <div class="top-header">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+0613915672">06 13 91 56 72</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:coralieroux.osteo@orange.fr">coralieroux.osteo@orange.fr</a>
+        </div>
+      </div>
 
+      <nav id="menu" class="slideout-menu">
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="panel" class="panel">
+        <button class="menu-button" id="menu-button">
+          <i class="fas fa-bars"></i>
+        </button>
+        <img src="image/logo.png" alt="logo" />
+      </div>
+    </header>
 
-<nav id="menu" class="slideout-menu">
-    <ul>
-      <li><a href="#">Accueil</a></li>
-      <li><a href="#">À propos</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <main id="panel" class="panel">
-    <button class="menu-button" id="menu-button">
-      <i class="fas fa-bars"></i>
-    </button>
-  </main>
+    <main>
+      <div class="splide" id="image-carousel">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <img src="/image/picture-carousel1.png" alt="Image 1" />
+            </li>
+            <li class="splide__slide">
+              <img src="/image/picture-carousel2.png" alt="Image2" />
+            </li>
+            <li class="splide__slide">
+              <img src="/image/picture-carousel3.png" alt="Image 3" />
+            </li>
+          </ul>
+        </div>
+        <div class="carousel-text">
+          <h2>Ostéopathe animalier</h2>
+          <p>Je propose des séances d’ostéopathie sur les Bovins, Canins, Félins, Equins et NACs</p>
+          <p>Pyrénées-Atlantiques (64) et Hautes-Pyrénées (65)</p>
+        </div>
+      </div>
+    </main>
 
-
-
-
-
-<div class="splide" id="image-carousel">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">
-          <img src="            " alt="Image 1" />
-        </li>
-        <li class="splide__slide">
-          <img src="             " alt="Image2" />
-        </li>
-        <li class="splide__slide">
-          <img src="            " alt="Image 3" />
-        </li>
-        <li class="splide__slide">
-          <img src="            " alt="Image 4" />
-        </li>
-      </ul>
-    </div>
-  </div>
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/js/splide.min.js"></script>
-<script src="splide.js"></script>
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-<script>
-  const slideout = new Slideout({
-    panel: document.getElementById("panel"),
-    menu: document.getElementById("menu"),
-    padding: 250,
-    tolerance: 50,
-    side: "right",
-  });
-
-  document.getElementById("menu-button").addEventListener("click", () => {
-    slideout.toggle();
-  });
-</script>
-
-
-<body>
-
-</body>
+    <footer></footer>
+  </body>
 </html>

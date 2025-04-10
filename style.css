@@ -1,3 +1,11 @@
+:root {
+  --main-color: #FADADD;
+  --secondary-color: #FAF8F4;
+  --text-color: #666666;
+  --light-text-color: white;
+  --bg-color: #f1f1f1;
+}
+
 * {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
@@ -5,12 +13,43 @@
     padding: 0;
 }
 
+/* Carousel */
 .splide__slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
 
+.splide__track {
+  height: 50vh;
+  position: relative;
+}
+
+.carousel-text {
+  color: var(--light-text-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.carousel-text h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.carousel-text p {
+  font-size: 0.75rem;
+  margin: 0.5rem;
+}
+
+/* 
+.splide__pagination__page.is-active {
+  background: var(--main-color);
+}
+/* Fin Carousel  */
 
 
 /* Burger Menu  */
@@ -20,11 +59,12 @@
     right: 0;
     bottom: 0;
     width: 250px;
-    background: #333;
-    color: white;
+    background: var(--main-color);
+    color: var(--light-text-color);
     padding-top: 60px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    z-index: 999;
   }
 
   .slideout-menu ul {
@@ -36,18 +76,18 @@
   .slideout-menu ul li {
     padding: 15px;
     text-align: center;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid white;
   }
 
   .slideout-menu ul li a {
-    color: white;
+    color: var(--light-text-color);
     text-decoration: none;
     font-size: 18px;
     display: block;
   }
 
   .slideout-menu ul li a:hover {
-    background: #555;
+    background: #FADADD;
   }
 
   .menu-button {
@@ -55,19 +95,61 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #333;
+    color: var(--main-color);
   }
 
   .panel {
-    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 1.125rem;
     transition: transform 0.3s ease;
   }
 
   .slideout-open .slideout-menu {
     transform: translateX(0);
   }
-  /* Burger Menu  */
+  /* Fin Burger Menu  */
+  
+  .top-header {
+    background-color: var(--main-color);
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  .contact-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-item i {
+    font-size: 1.2rem;
+    color: var(--light-text-color);
+  }
+  
+  .contact-item a {
+    text-decoration: none;
+    color: var(--light-text-color);
+    font-size: 1rem;
+  }
+  
+  .panel img {
+    max-width: 150px;
+    width: 11.7vw;
+    height: auto;
+  }  
+
+  @media (min-width: 768px) {
+    .top-header {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 2rem;
+    }
+  
+    .contact-item {
+      margin-bottom: 0;
+    }
+  }
