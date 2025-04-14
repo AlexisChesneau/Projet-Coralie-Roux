@@ -3,13 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/logo.png" type="image/png" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/css/splide.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/js/splide.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/css/splide.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/js/splide.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"
+    ></script>
     <script defer src="js/menu-burger.js"></script>
     <script defer src="js/carousel.js"></script>
+    <script defer src="js/fetch.js"></script>
 
     <title>Coralie Roux Ostéopathe animalier</title>
   </head>
@@ -23,7 +37,9 @@
         </div>
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
-          <a href="mailto:coralieroux.osteo@orange.fr">coralieroux.osteo@orange.fr</a>
+          <a href="mailto:coralieroux.osteo@orange.fr"
+            >coralieroux.osteo@orange.fr</a
+          >
         </div>
       </div>
 
@@ -48,22 +64,92 @@
         <div class="splide__track">
           <ul class="splide__list">
             <li class="splide__slide">
-              <img src="/image/picture-carousel1.png" alt="Image 1" />
+              <img
+                src="/image/picture-carousel1.png"
+                alt="picture-carousel 1"
+              />
             </li>
             <li class="splide__slide">
-              <img src="/image/picture-carousel2.png" alt="Image2" />
+              <img
+                src="/image/picture-carousel2.png"
+                alt="picture-carousel 2"
+              />
             </li>
             <li class="splide__slide">
-              <img src="/image/picture-carousel3.png" alt="Image 3" />
+              <img
+                src="/image/picture-carousel3.png"
+                alt="picture-carousel 3"
+              />
             </li>
           </ul>
         </div>
         <div class="carousel-text">
           <h2>Ostéopathe animalier</h2>
-          <p>Je propose des séances d’ostéopathie sur les Bovins, Canins, Félins, Equins et NACs</p>
+          <p>
+            Je propose des séances d’ostéopathie sur les Bovins, Canins, Félins,
+            Equins et NACs
+          </p>
           <p>Pyrénées-Atlantiques (64) et Hautes-Pyrénées (65)</p>
         </div>
       </div>
+      <section class="definition-osteopathie">
+        <h2>Définition ostéopathie animale :</h2>
+        <p>
+          L’ostéopathie animale est une thérapie manuelle, douce, non invasive,
+          qui s’intéresse aux troubles fonctionnels du corps de l’animal. Elle a
+          pour but de prévenir ou traiter ce que l’on appelle des dysfonctions
+          ostéopathiques : blocages articulaires, tensions musculaires, tensions
+          fasciales, problèmes viscéraux, tensions crâniennes. L’ostéopathe
+          travaille en collaboration avec d’autres professionnels de santé
+          animale comme les vétérinaires.
+        </p>
+        <div class="image-wrapper">
+          <img
+            src="/image/pictrure-definition-osteopathie.png"
+            alt="image definition-osteopathie"
+          />
+        </div>
+      </section>
+      <section class="a-propos">
+        <h2>A propos de moi :</h2>
+        <img src="/image/picture-profil.png" alt="picture-profil" />
+        <p>
+          Coralie Roux – Ostéopathe Animalier Grande passionnée des animaux, je
+          me suis dirigée vers des études en ostéopathie animale au sein du
+          C-NESOA (Centre National des Études Spécialisées en Ostéopathie
+          Animale) à Chatel-Guyon (63). Diplômée après 5 années d’études, je me
+          suis installée sur la commune de Lestelle-Bétharram dans les
+          Pyrénées-Atlantiques (64).
+        </p>
+        <p>
+          Officiellement inscrite au Registre National de l’Ordre des
+          Vétérinaires sous le numéro OA 1538.
+        </p>
+      </section>
+      <section class="pourquoi-osteopathe">
+        <h2>Pourquoi faire appel à un ostéopathe pour ses animaux ?</h2>
+        <div id="animals-container"></div>
+        <h2>C’est quoi l'ostéopathie préventive ?</h2>
+        <p>
+          Il est intéressant de faire examiner ses animaux au moins une fois par
+          an par un ostéopathe animalier afin de maintenir leur bien-être
+          global. Les séances permettent de trouver et de corriger les
+          déséquilibres physiques avant qu'ils ne s'aggravent. En agissant de
+          manière préventive, on assure une meilleure qualité de vie à nos
+          compagnons.
+        </p>
+      </section>
+      <section class="services">
+        <h2>Mes services :</h2>
+        <p>
+          Je propose des séances d’ostéopathie sur tous les animaux mêlant
+          plusieurs techniques (crânienne, viscérale, structurelle, musculaire,
+          tissulaire, fasciale et TOG), ce qui me permet de m’adapter aux
+          besoins de votre animal. Chaque séance est personnalisée et traite
+          l’animal dans sa globalité, pour lui redonner de la mobilité et un
+          confort de vie.
+        </p>
+      </section>
     </main>
 
     <footer></footer>

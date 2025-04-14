@@ -1,7 +1,10 @@
+
+/* Global */
 :root {
   --main-color: #FADADD;
   --secondary-color: #FAF8F4;
   --text-color: #666666;
+  --text-h2-color: #244A4B; 
   --light-text-color: white;
   --bg-color: #f1f1f1;
 }
@@ -13,15 +16,118 @@
     padding: 0;
 }
 
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+/* Fin Global */
+
+/* Header */
+.top-header {
+  background-color: var(--main-color);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-item i {
+  font-size: 1.2rem;
+  color: var(--light-text-color);
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: var(--light-text-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.panel img {
+  max-width: 150px;
+  width: 11.7vw;
+  height: auto;
+}  
+/* Fin Header */
+
+/* Burger Menu  */
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  background: var(--main-color);
+  color: var(--light-text-color);
+  padding-top: 60px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+.slideout-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slideout-menu ul li {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.slideout-menu ul li a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+.slideout-menu ul li a:hover {
+  background: #FADADD;
+}
+
+.menu-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.panel {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 1.125rem;
+  transition: transform 0.3s ease;
+}
+
+.slideout-open .slideout-menu {
+  transform: translateX(0);
+  border-left: 1px solid white;
+}
+
+.splide__pagination__page.is-active {
+  background: var(--main-color)!important;
+}
+/* Fin Burger Menu  */
+
 /* Carousel */
 .splide__slide img {
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   object-fit: cover;
 }
 
 .splide__track {
-  height: 50vh;
+  height: 40vh;
   position: relative;
 }
 
@@ -32,124 +138,159 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
+  width: 80%;
+  max-width: 600px;
+
 }
 
 .carousel-text h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 2.5rem;
+  color: var(--light-text-color);
 }
 
 .carousel-text p {
-  font-size: 0.75rem;
+  font-size: 0.80em;
   margin: 0.5rem;
+  font-weight: bold;
+  line-height: 2;
 }
 
-/* 
-.splide__pagination__page.is-active {
-  background: var(--main-color);
+.splide__track::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 /* Fin Carousel  */
 
-
-/* Burger Menu  */
-  .slideout-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 250px;
-    background: var(--main-color);
-    color: var(--light-text-color);
-    padding-top: 60px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 999;
+  /* Section Définition ostéopathie animale */
+  .definition-osteopathie {
+    padding: 3rem 1rem;
   }
 
-  .slideout-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .slideout-menu ul li {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid white;
-  }
-
-  .slideout-menu ul li a {
-    color: var(--light-text-color);
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-  }
-
-  .slideout-menu ul li a:hover {
-    background: #FADADD;
-  }
-
-  .menu-button {
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--main-color);
-  }
-
-  .panel {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    padding: 1.125rem;
-    transition: transform 0.3s ease;
-  }
-
-  .slideout-open .slideout-menu {
-    transform: translateX(0);
-  }
-  /* Fin Burger Menu  */
-  
-  .top-header {
-    background-color: var(--main-color);
-    padding: 0.5rem;
-    text-align: center;
+  .definition-osteopathie H2 {
+    color: var(--text-h2-color);
   }
   
-  .contact-item {
+  .definition-osteopathie p {
+    text-align: center;
+    line-height: 1.6;
+    color: var(--text-color);
+    padding-top: 1.75rem;
+  }
+
+  .definition-osteopathie img {
+    width: clamp(18.75rem, 80vw, 31.25rem);
+    margin-top: 3rem;
+    border-radius: 8px;
+    box-shadow: 10px -10px 0px var(--main-color); /* droite + haut */
+  }
+
+  .image-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
   }
-  
-  .contact-item i {
-    font-size: 1.2rem;
-    color: var(--light-text-color);
-  }
-  
-  .contact-item a {
-    text-decoration: none;
-    color: var(--light-text-color);
-    font-size: 1rem;
-  }
-  
-  .panel img {
-    max-width: 150px;
-    width: 11.7vw;
-    height: auto;
-  }  
+  /* Fin Section Définition ostéopathie animale */
 
-  @media (min-width: 768px) {
-    .top-header {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 2rem;
-    }
-  
-    .contact-item {
-      margin-bottom: 0;
-    }
+
+
+  /* Section A propos */
+  .a-propos {
+    padding: 3rem 1rem;
+    background-color: var(--secondary-color);
   }
+
+  .a-propos h2 {
+    color: var(--text-h2-color);
+  }
+
+  .a-propos img {
+    width: clamp(18.75rem, 80vw, 31.25rem);
+    margin: 3rem 0;
+    border-radius: 8px;
+    box-shadow: 10px -10px 0px var(--main-color);
+  }
+
+  .a-propos p {
+    text-align: center;
+    line-height: 1.6;
+    padding-bottom: 1rem;
+    color: var(--text-color);
+  }
+
+  /* Fin Section A propos */
+
+
+/* Section Pourquoi faire appel osteopathe pour animaux */
+.pourquoi-osteopathe {
+  padding: 3rem 1rem;
+  background-color: var(--main-color);
+}
+
+.pourquoi-osteopathe h2 {
+  color: var(--light-text-color);
+  text-align: center;
+}
+
+.pourquoi-osteopathe .animal {
+  background-color: var(--light-text-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 3rem 0;
+}
+
+.pourquoi-osteopathe img {
+  width: clamp(16.5rem, 50vw, 31.25rem);
+  border-radius: 8px;
+}
+
+.animal:nth-child(even) img {
+  box-shadow: 10px -10px 0px var(--main-color);
+}
+
+.animal:nth-child(odd) img {
+  box-shadow: -10px -10px 0px var(--main-color);
+}
+
+.pourquoi-osteopathe h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.pourquoi-osteopathe ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.pourquoi-osteopathe li {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.pourquoi-osteopathe p {
+  color: var(--light-text-color);
+  line-height: 1.6;
+  text-align: center;
+  padding-top: 1.75rem;
+}
+/* Fin Section Pourquoi faire appel osteopathe pour animaux */
+
+/* Section Services */
+.services {
+  padding: 3rem 1rem;
+  color: var(--text-color);
+}
+
+.services h2{
+  margin-bottom: 2.5rem;
+}
+
+.services p {
+  text-align: center;
+  line-height: 1.6;
+}
+/* Fin Section Services */
