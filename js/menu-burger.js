@@ -9,3 +9,9 @@ const slideout = new Slideout({
 document.getElementById("menu-button").addEventListener("click", () => {
   slideout.toggle();
 });
+
+document.querySelectorAll('#menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    slideout.close();
+  });
+});

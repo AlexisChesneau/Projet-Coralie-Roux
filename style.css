@@ -1,28 +1,56 @@
-
 /* Global */
 :root {
-  --main-color: #FADADD;
-  --secondary-color: #FAF8F4;
+  --main-color: #f5b3c7;
+  --secondary-color: #f0e8dd;
   --text-color: #666666;
-  --text-h2-color: #244A4B; 
+  --text-h2-color: #244a4b;
   --light-text-color: white;
   --bg-color: #f1f1f1;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
 * {
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   text-align: center;
+}
+
+main {
+  margin-top: 8.4rem;
+}
+
+section {
+  scroll-margin-top: clamp(8.4rem, 10vh, 10rem);
+  padding: 2rem 1rem;
 }
 /* Fin Global */
 
 /* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .top-header {
   background-color: var(--main-color);
   padding: 0.5rem;
@@ -37,22 +65,22 @@ h2 {
 }
 
 .contact-item i {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--light-text-color);
 }
 
 .contact-item a {
   text-decoration: none;
   color: var(--light-text-color);
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
   font-weight: bold;
 }
 
 .panel img {
   max-width: 150px;
-  width: 11.7vw;
+  width: clamp(50px, 11.7vw, 150px);
   height: auto;
-}  
+}
 /* Fin Header */
 
 /* Burger Menu  */
@@ -90,7 +118,7 @@ h2 {
 }
 
 .slideout-menu ul li a:hover {
-  background: #FADADD;
+  background: #fadadd;
 }
 
 .menu-button {
@@ -115,19 +143,19 @@ h2 {
 }
 
 .splide__pagination__page.is-active {
-  background: var(--main-color)!important;
+  background: var(--main-color) !important;
 }
 /* Fin Burger Menu  */
 
 /* Carousel */
 .splide__slide img {
   width: 100%;
-  height: 40vh;
+  height: 60vh;
   object-fit: cover;
 }
 
 .splide__track {
-  height: 40vh;
+  height: 60vh;
   position: relative;
 }
 
@@ -138,9 +166,9 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 80%;
+  width: 100%;
+  padding: 0 1.5rem;
   max-width: 600px;
-
 }
 
 .carousel-text h2 {
@@ -150,79 +178,77 @@ h2 {
 }
 
 .carousel-text p {
-  font-size: 0.80em;
+  font-size: 1em;
   margin: 0.5rem;
-  font-weight: bold;
   line-height: 2;
 }
 
 .splide__track::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 /* Fin Carousel  */
 
-  /* Section Définition ostéopathie animale */
-  .definition-osteopathie {
-    padding: 3rem 1rem;
-  }
+/* Section Définition ostéopathie animale */
+.definition-osteopathie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+}
 
-  .definition-osteopathie H2 {
-    color: var(--text-h2-color);
-  }
-  
-  .definition-osteopathie p {
-    text-align: center;
-    line-height: 1.6;
-    color: var(--text-color);
-    padding-top: 1.75rem;
-  }
+.definition-osteopathie H2 {
+  color: var(--text-h2-color);
+}
 
-  .definition-osteopathie img {
-    width: clamp(18.75rem, 80vw, 31.25rem);
-    margin-top: 3rem;
-    border-radius: 8px;
-    box-shadow: 10px -10px 0px var(--main-color); /* droite + haut */
-  }
+.definition-osteopathie p {
+  text-align: center;
+  line-height: 1.6;
+  color: var(--text-color);
+  padding-top: 1.75rem;
+}
 
-  .image-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-  /* Fin Section Définition ostéopathie animale */
+.definition-osteopathie img {
+  width: clamp(18.75rem, 80vw, 31.25rem);
+  margin-top: 3rem;
+  border-radius: 8px;
+  box-shadow: 10px -10px 0px var(--main-color);
+}
 
+/* Fin Section Définition ostéopathie animale */
 
+/* Section A propos */
+.a-propos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: var(--secondary-color);
+}
 
-  /* Section A propos */
-  .a-propos {
-    padding: 3rem 1rem;
-    background-color: var(--secondary-color);
-  }
+.a-propos h2 {
+  color: var(--text-h2-color);
+}
 
-  .a-propos h2 {
-    color: var(--text-h2-color);
-  }
+.a-propos img {
+  width: clamp(18.75rem, 80vw, 31.25rem);
+  margin: 3rem 0;
+  border-radius: 8px;
+  box-shadow: -10px -10px 0px var(--main-color);
+}
 
-  .a-propos img {
-    width: clamp(18.75rem, 80vw, 31.25rem);
-    margin: 3rem 0;
-    border-radius: 8px;
-    box-shadow: 10px -10px 0px var(--main-color);
-  }
+.a-propos p {
+  text-align: center;
+  line-height: 1.6;
+  padding-bottom: 1rem;
+  color: var(--text-color);
+}
 
-  .a-propos p {
-    text-align: center;
-    line-height: 1.6;
-    padding-bottom: 1rem;
-    color: var(--text-color);
-  }
-
-  /* Fin Section A propos */
-
+/* Fin Section A propos */
 
 /* Section Pourquoi faire appel osteopathe pour animaux */
 .pourquoi-osteopathe {
@@ -235,16 +261,27 @@ h2 {
   text-align: center;
 }
 
+.pourquoi-osteopathe img {
+  width: clamp(16.5rem, 75vw, 31.25rem);
+  border-radius: 8px;
+}
+
 .pourquoi-osteopathe .animal {
   background-color: var(--light-text-color);
   border-radius: 8px;
   padding: 1.25rem;
   margin: 3rem 0;
+  line-height: 1.3;
 }
 
-.pourquoi-osteopathe img {
-  width: clamp(16.5rem, 50vw, 31.25rem);
-  border-radius: 8px;
+.animal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animal h3 {
+  align-self: flex-start
 }
 
 .animal:nth-child(even) img {
@@ -281,11 +318,15 @@ h2 {
 
 /* Section Services */
 .services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 3rem 1rem;
   color: var(--text-color);
+  background-color: var(--secondary-color);
 }
 
-.services h2{
+.services h2 {
   margin-bottom: 2.5rem;
 }
 
@@ -293,4 +334,184 @@ h2 {
   text-align: center;
   line-height: 1.6;
 }
+
+.services img:nth-child(even) {
+  box-shadow: 10px -10px 0px var(--main-color);
+}
+
+.services img:nth-child(odd) {
+  box-shadow: -10px -10px 0px var(--main-color);
+}
+
+.services img {
+  width: clamp(16.5rem, 50vw, 31.25rem);
+  margin-top: 3rem;
+  border-radius: 8px;
+}
 /* Fin Section Services */
+
+/* Section Frais de déplacement */
+.deplacement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  color: var(--text-color);
+}
+
+.deplacement img {
+  width: clamp(16.75rem, 80vw, 31.25rem);
+  border-radius: 8px;
+}
+
+.deplacement p {
+  text-align: center;
+  line-height: 1.6;
+  margin: 2.5rem;
+}
+
+.deplacement li {
+  line-height: 1.6;
+}
+/* Fin Section Frais de déplacement */
+
+/* Section Contact */
+.contact {
+  padding: 3rem 1rem;
+  color: var(--light-text-color);
+  background-color: var(--main-color);
+}
+
+.contact h2 {
+  margin-bottom: 2.5rem;
+}
+
+.contact p {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.numero {
+  margin: 1.2rem;
+}
+
+.email {
+  margin-top: 2.5rem;
+}
+
+.numero, .email {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/* Fin Section Contact */
+
+/* Section Témoignages */
+
+.temoignages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+}
+
+.temoignages h2 {
+  margin-bottom: 2.5rem;
+}
+
+.temoignages p {
+  text-align: center;
+  line-height: 1.6;
+  margin: 0 1rem 3rem;
+}
+
+/* Carousel Mobile */
+.swiper__container {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  background: var(--secondary-color);
+  border-radius: 12px;
+  width: 80%;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  display: block;
+}
+/* Fin Carousel Mobile */
+/* Fin Section Témoignages */
+
+/* Footer */
+footer {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 25px;
+}
+
+footer img {
+  height: clamp(30px, 5vw, 60px);
+  width: auto;
+}
+
+.icons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.signatures-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem; 
+}
+
+.signatures-container p {
+  font-size: clamp(14px, 1.5vw, 18px);
+  margin-bottom: 0.8rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+.signatures-designer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signatures-container button:hover {
+  cursor: pointer;
+} 
+
+a {
+  text-decoration: none; 
+  color: inherit;
+}
+
+
+/* Fin Footer */
+
+.copyright {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.anim-title {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}

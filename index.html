@@ -13,6 +13,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/js/splide.min.js"
@@ -21,9 +29,15 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"
     ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
+    <script src="js/animations.js"></script>
     <script defer src="js/menu-burger.js"></script>
     <script defer src="js/carousel.js"></script>
     <script defer src="js/fetch.js"></script>
+    <script defer src="js/carousel-mobile.js"></script>
 
     <title>Coralie Roux Ostéopathe animalier</title>
   </head>
@@ -42,20 +56,21 @@
           >
         </div>
       </div>
-
       <nav id="menu" class="slideout-menu">
         <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">À propos</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#a-propos">À propos de moi</a></li>
+          <li><a href="#pourquoi-osteopathe">Pourquoi ?</a></li>
+          <li><a href="#services">Mes Services</a></li>
+          <li><a href="#contact">Contactez-moi </a></li>
         </ul>
       </nav>
       <div id="panel" class="panel">
         <button class="menu-button" id="menu-button">
           <i class="fas fa-bars"></i>
         </button>
+        <a href="#">
         <img src="image/logo.png" alt="logo" />
+      </a>
       </div>
     </header>
 
@@ -84,12 +99,12 @@
           </ul>
         </div>
         <div class="carousel-text">
-          <h2>Ostéopathe animalier</h2>
-          <p>
+          <h2  class="anim-title" >Ostéopathe animalier</h2>
+          <p class="anim-title">
             Je propose des séances d’ostéopathie sur les Bovins, Canins, Félins,
             Equins et NACs
           </p>
-          <p>Pyrénées-Atlantiques (64) et Hautes-Pyrénées (65)</p>
+          <p class="anim-title">Pyrénées-Atlantiques (64) et Hautes-Pyrénées (65)</p>
         </div>
       </div>
       <section class="definition-osteopathie">
@@ -110,7 +125,7 @@
           />
         </div>
       </section>
-      <section class="a-propos">
+      <section id="a-propos" class="a-propos">
         <h2>A propos de moi :</h2>
         <img src="/image/picture-profil.png" alt="picture-profil" />
         <p>
@@ -126,7 +141,7 @@
           Vétérinaires sous le numéro OA 1538.
         </p>
       </section>
-      <section class="pourquoi-osteopathe">
+      <section id="pourquoi-osteopathe" class="pourquoi-osteopathe">
         <h2>Pourquoi faire appel à un ostéopathe pour ses animaux ?</h2>
         <div id="animals-container"></div>
         <h2>C’est quoi l'ostéopathie préventive ?</h2>
@@ -139,7 +154,7 @@
           compagnons.
         </p>
       </section>
-      <section class="services">
+      <section id="services" class="services">
         <h2>Mes services :</h2>
         <p>
           Je propose des séances d’ostéopathie sur tous les animaux mêlant
@@ -149,9 +164,109 @@
           l’animal dans sa globalité, pour lui redonner de la mobilité et un
           confort de vie.
         </p>
+        <img src="image/tarif.png" alt="tarif" />
+        <img src="image/tarif-jeune.png" alt="tarif-jeune" />
+        <img src="image/forfait.png" alt="forfait" />
+        <img src="image/tarif-association.png" alt="tarif-association" />
+      </section>
+      <section class="deplacement">
+        <h2>Frais de déplacement :</h2>
+        <p>
+          Dans les Pyrénées-Atlantiques et départements limitrophes Zone rouge :
+          moins de 20km de Lestelle-Bétharram – Gratuit
+        </p>
+        <img
+          src="image/localisation-pyrenees.png"
+          alt="localisation-pyrenees"
+        />
+        <p>
+          Au-delà de la zone rouge : des frais de déplacement seront mis en
+          place
+        </p>
+        <ul>
+          <li>Au-delà de 20km : 5€</li>
+          <li>Au-delà de 30km : 10€</li>
+          <li>Au-delà de 40km : 15€</li>
+          <li>Au-delà de 50km : 20€</li>
+          <li>Au-delà de 60km : 25€</li>
+        </ul>
+        <p>
+          Déplacements possibles dans le Puy-de-Dôme Zone rouge : moins de 20km
+          de Paslières – Gratuit
+        </p>
+        <img
+          src="image/localisation-auvergne.png"
+          alt="localisation-auvergne"
+        />
+      </section>
+      <section class="contact">
+        <h2>Contactez-moi !</h2>
+        <p>
+          Contactez-moi dès aujourd’hui pour discuter des besoins de votre
+          animal et prendre un rendez-vous.
+        </p>
+        <p class="numero">06 13 91 56 72</p>
+        <p>
+          N’hésitez pas à consulter les réseaux sociaux (Instagram & Facebook)
+          pour accéder aux dernières actualités (déplacements, plannings,
+          formations…) et profiter de publications autour de l’ostéopathie
+          animale.
+        </p>
+        <p class="email">coralieroux.osteo@orange.fr</p>
+      </section>
+      <section class="temoignages">
+        <h2>Quelques Témoignages</h2>
+        <p>
+          Les témoignages de mes clients sont la meilleure preuve de mon
+          engagement envers la santé et le bien-être de vos animaux de
+          compagnie.
+        </p>
+
+        <div class="swiper swiper__container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="image/avis-furet.png" alt="avis furet" />
+            </div>
+            <div class="swiper-slide">
+              <img src="image/avis-chien.png" alt="avis chien" />
+            </div>
+            <div class="swiper-slide">
+              <img src="image/avis-cheval.png" alt="avis cheval" />
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-
-    <footer></footer>
+    <footer id="contact">
+      <a href="mailto:contact@exemple.com">
+        <h4>coralieroux.osteo@orange.fr</h4>
+      </a>
+      <h4>Téléphone : 06 13 91 56 72</h4>
+      <div class="icons-container">
+        <img src="image/icon-instagram.png" alt="icon-instagram" />
+        <img src="image/icon-facebook.png" alt="icon-facebook" />
+      </div>
+      <div class="signatures-container">
+        <div class="signatures-designer">
+          <p>Designed par :</p>
+          <a href="https://alexischesneau.github.io/Portfolio/">
+            <img
+              src="image/signature-designer.png"
+              alt="signature-photographe"
+            />
+          </a>
+        </div>
+        <div class="signatures-photographe">
+          <p>Photos réalisées par :</p>
+          <a href="https://www.equestrier.com/">
+            <img
+              src="image/signature-photographe.png"
+              alt="signature-photographe"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+    <p class="copyright">coralie-roux.fr © copyright 2024</p>
   </body>
 </html>
