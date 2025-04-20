@@ -1,5 +1,5 @@
 new Splide("#image-carousel", {
-  type: "slide",
+  type: "loop",
   heightRatio: 0.5,
   pagination: true,
   autoplay: true,

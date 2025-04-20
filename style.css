@@ -21,6 +21,13 @@ html {
   padding: 0;
 }
 
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
 }
@@ -326,11 +333,8 @@ header {
   background-color: var(--secondary-color);
 }
 
-.services h2 {
-  margin-bottom: 2.5rem;
-}
-
 .services p {
+  margin: 2rem 0;
   text-align: center;
   line-height: 1.6;
 }
@@ -345,7 +349,8 @@ header {
 
 .services img {
   width: clamp(16.5rem, 50vw, 31.25rem);
-  margin-top: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   border-radius: 8px;
 }
 /* Fin Section Services */
