@@ -6,12 +6,25 @@ const slideout = new Slideout({
   side: "right",
 });
 
-document.getElementById("menu-button").addEventListener("click", () => {
+const menuButton = document.getElementById("menu-button");
+const icon = menuButton.querySelector("i");
+
+menuButton.addEventListener("click", () => {
   slideout.toggle();
 });
 
-document.querySelectorAll('#menu a').forEach(link => {
-  link.addEventListener('click', () => {
+slideout.on("open", () => {
+  icon.classList.remove("fa-bars");
+  icon.classList.add("fa-times");
+});
+
+slideout.on("close", () => {
+  icon.classList.remove("fa-times");
+  icon.classList.add("fa-bars");
+});
+
+document.querySelectorAll("#menu a").forEach((link) => {
+  link.addEventListener("click", () => {
     slideout.close();
   });
 });

@@ -4,7 +4,7 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 'auto',
     loop: false,
     loopAdditionalSlides: 1,
-    initialSlide: 1,
+    initialSlide: 2,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,

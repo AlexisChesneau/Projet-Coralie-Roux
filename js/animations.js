@@ -3,6 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     elementsToAnimate.forEach(function(element, index) {
         setTimeout(function() {
             element.style.opacity = 1;
-        }, 500 * index);
+        }, 1000 * index);
     });
 });

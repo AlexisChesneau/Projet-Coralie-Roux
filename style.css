@@ -225,7 +225,6 @@ header {
   border-radius: 8px;
   box-shadow: 10px -10px 0px var(--main-color);
 }
-
 /* Fin Section Définition ostéopathie animale */
 
 /* Section A propos */
@@ -254,7 +253,6 @@ header {
   padding-bottom: 1rem;
   color: var(--text-color);
 }
-
 /* Fin Section A propos */
 
 /* Section Pourquoi faire appel osteopathe pour animaux */
@@ -411,7 +409,6 @@ header {
 /* Fin Section Contact */
 
 /* Section Témoignages */
-
 .temoignages {
   display: flex;
   flex-direction: column;
@@ -505,8 +502,6 @@ a {
   text-decoration: none; 
   color: inherit;
 }
-
-
 /* Fin Footer */
 
 .copyright {
