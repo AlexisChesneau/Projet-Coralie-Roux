@@ -45,6 +45,14 @@ section {
   scroll-margin-top: clamp(8.4rem, 10vh, 10rem);
   padding: 2rem 1rem;
 }
+
+.vertical {
+  width: clamp(18.75rem, 80vw, 22rem);
+}
+
+.horizontal {
+  width: clamp(18.75rem, 80vw, 30rem);
+}
 /* Fin Global */
 
 /* Header */
@@ -85,8 +93,17 @@ header {
 
 .panel img {
   max-width: 150px;
-  width: clamp(50px, 11.7vw, 150px);
+  width: clamp(50px, 65px, 150px);
   height: auto;
+}
+
+@media (min-width: 768px) {
+  .top-header {
+    display: flex;
+    justify-content: space-around;
+    height: 54px;
+  }
+  
 }
 /* Fin Header */
 
@@ -140,7 +157,7 @@ header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  padding: 1.125rem;
+  padding: 1rem;
   transition: transform 0.3s ease;
 }
 
@@ -151,6 +168,39 @@ header {
 
 .splide__pagination__page.is-active {
   background: var(--main-color) !important;
+}
+
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+
+  .slideout-menu {
+    transform: none !important;
+    width: auto;
+    height: auto;
+    background: none;
+    display: block;
+  }
+
+  .slideout-menu ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .slideout-menu ul li a {
+    color: var(--text-color);
+    padding: 18.5px 0;
+  }
+
+  .panel {
+    flex-direction: row;
+  }
+
+  .slideout-menu ul li a:hover {
+    background: none;
+    color: var(--main-color);
+  }
 }
 /* Fin Burger Menu  */
 
@@ -220,7 +270,6 @@ header {
 }
 
 .definition-osteopathie img {
-  width: clamp(18.75rem, 80vw, 31.25rem);
   margin-top: 3rem;
   border-radius: 8px;
   box-shadow: 10px -10px 0px var(--main-color);
@@ -241,7 +290,7 @@ header {
 }
 
 .a-propos img {
-  width: clamp(18.75rem, 80vw, 31.25rem);
+
   margin: 3rem 0;
   border-radius: 8px;
   box-shadow: -10px -10px 0px var(--main-color);
@@ -267,7 +316,6 @@ header {
 }
 
 .pourquoi-osteopathe img {
-  width: clamp(16.5rem, 75vw, 31.25rem);
   border-radius: 8px;
 }
 
@@ -346,7 +394,7 @@ header {
 }
 
 .services img {
-  width: clamp(16.5rem, 50vw, 31.25rem);
+  width: clamp(16.5rem, 50vw, 18rem);
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
