@@ -16,7 +16,7 @@ html {
 * {
   font-family: Arial, sans-serif;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -28,12 +28,16 @@ body {
   -ms-user-select: none;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins", sans-serif;
 }
 
 h2 {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.2rem, 3vw, 2rem);
   text-align: center;
 }
 
@@ -104,7 +108,6 @@ header {
     justify-content: space-around;
     height: 54px;
   }
-  
 }
 /* Fin Header */
 
@@ -130,7 +133,7 @@ header {
 }
 
 .slideout-menu ul li {
-  padding: 0 15px;
+  padding: 25px 15px;
   text-align: center;
   border-bottom: 1px solid white;
 }
@@ -191,7 +194,11 @@ header {
 
   .slideout-menu ul li a {
     color: var(--text-color);
-    padding: 23px 0;
+    padding: 26px 0;
+  }
+
+  .slideout-menu ul li {
+    padding: 0 15px;
   }
 
   .panel {
@@ -280,14 +287,25 @@ header {
 }
 
 @media (min-width: 1280px) {
+  .definition-osteopathie {
+    padding: 6rem 1rem 10rem 0;
+  }
+
+  .definition-osteopathie h2 {
+    padding-bottom: 5rem;
+  }
+
   .definition-osteopathie-container {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .definition-osteopathie-container p {
     width: 24rem;
     text-align: left;
+    margin-right: 170px;
+    padding-top: 0;
+    line-height: 1.9;
   }
 }
 
@@ -323,14 +341,26 @@ header {
 }
 
 @media (min-width: 1280px) {
+  .a-propos {
+    padding: 6rem 1rem 6rem 0;
+  }
+
+  .a-propos h2 {
+    padding-bottom: 5rem;
+  }
+
   .a-propos-container {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .a-propos-container p {
     width: 24rem;
     text-align: left;
+    margin-left: 170px;
+    padding-top: 0;
+    padding-bottom: 50px;
+    line-height: 1.9;
   }
 }
 /* Fin Section A propos */
@@ -365,7 +395,7 @@ header {
 }
 
 .animal h3 {
-  align-self: flex-start
+  align-self: flex-start;
 }
 
 .animal:nth-child(even) img {
@@ -401,13 +431,16 @@ header {
 
 @media (min-width: 1280px) {
   .pourquoi-osteopathe {
-    padding: 3rem 0;
+    padding: 6rem 0;
+  }
+
+  .pourquoi-osteopathe .animals-container {
+    padding: 5rem 0;
   }
 
   .pourquoi-osteopathe .animal {
     padding: 1.5rem 2rem;
   }
-
 
   .pourquoi-osteopathe .animal:nth-child(even) .animal-content {
     padding: 0 50px 0 0;
@@ -428,8 +461,17 @@ header {
     margin-right: 10rem;
     border-radius: 0 10px 10px 0;
   }
-}
 
+  .osteopathie-preventive-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .osteopathie-preventive-container p {
+    width: 70%;
+  }
+}
 /* Fin Section Pourquoi faire appel osteopathe pour animaux */
 
 /* Section Services */
@@ -461,6 +503,54 @@ header {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 8px;
+}
+
+.tarif-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1280px) {
+  .services {
+    padding: 6rem 0;
+  }
+
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-container p {
+    width: 70%;
+  }
+
+  .tarif-container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 3rem 0;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    "tarif tarif-association forfait"
+    "tarif tarif-jeune forfait"
+  }
+
+  .tarif { grid-area: tarif; }
+  .tarif-jeune { grid-area: tarif-jeune; }
+  .forfait { grid-area: forfait; }
+  .tarif-association { grid-area: tarif-association; }
+
+  .services img {
+    margin: 15px 20px 15px 20px;
+  }
+
+  .tarif-jeune, .tarif-association{
+    height: 240px;
+    width: 240px !important;
+  }
 }
 /* Fin Section Services */
 
@@ -513,7 +603,8 @@ header {
   margin-top: 2.5rem;
 }
 
-.numero, .email {
+.numero,
+.email {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -587,7 +678,7 @@ footer img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem; 
+  gap: 2.5rem;
 }
 
 .signatures-container p {
@@ -607,10 +698,10 @@ footer p {
 
 .signatures-container button:hover {
   cursor: pointer;
-} 
+}
 
 a {
-  text-decoration: none; 
+  text-decoration: none;
   color: inherit;
 }
 /* Fin Footer */
