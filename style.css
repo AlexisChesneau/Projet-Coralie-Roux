@@ -47,7 +47,6 @@ main {
 
 section {
   scroll-margin-top: clamp(8.4rem, 10vh, 10rem);
-  padding: 2rem 1rem;
 }
 
 .vertical {
@@ -90,6 +89,8 @@ header {
 }
 
 .contact-item a {
+  position: relative;
+  z-index: 1;
   text-decoration: none;
   color: var(--light-text-color);
   font-size: clamp(0.8rem, 2vw, 1rem);
@@ -161,7 +162,7 @@ header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  padding: 0.6rem;
+  padding: 0.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -182,9 +183,10 @@ header {
   .slideout-menu {
     transform: none !important;
     width: auto;
-    height: auto;
     background: none;
     display: block;
+    height: 0px;
+    z-index: 0;
   }
 
   .slideout-menu ul {
@@ -287,14 +289,6 @@ header {
 }
 
 @media (min-width: 1280px) {
-  .definition-osteopathie {
-    padding: 6rem 1rem 10rem 0;
-  }
-
-  .definition-osteopathie h2 {
-    padding-bottom: 5rem;
-  }
-
   .definition-osteopathie-container {
     flex-direction: row;
     justify-content: center;
@@ -341,14 +335,6 @@ header {
 }
 
 @media (min-width: 1280px) {
-  .a-propos {
-    padding: 6rem 1rem 6rem 0;
-  }
-
-  .a-propos h2 {
-    padding-bottom: 5rem;
-  }
-
   .a-propos-container {
     flex-direction: row;
     justify-content: center;
@@ -426,18 +412,10 @@ header {
   color: var(--light-text-color);
   line-height: 1.6;
   text-align: center;
-  padding-top: 1.75rem;
+  padding: 1.75rem;
 }
 
 @media (min-width: 1280px) {
-  .pourquoi-osteopathe {
-    padding: 6rem 0;
-  }
-
-  .pourquoi-osteopathe .animals-container {
-    padding: 3rem 0;
-  }
-
   .pourquoi-osteopathe .animal {
     padding: 1.5rem 2rem;
   }
@@ -511,10 +489,6 @@ header {
 }
 
 @media (min-width: 1280px) {
-  .services {
-    padding: 6rem 0;
-  }
-
   .services-container {
     display: flex;
     flex-direction: column;
@@ -529,25 +503,34 @@ header {
     display: grid;
     align-items: center;
     justify-items: center;
-    padding: 3rem 0;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-    "tarif tarif-association forfait"
-    "tarif tarif-jeune forfait"
+    padding: 1rem 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "tarif tarif-association forfait"
+      "tarif tarif-jeune forfait";
   }
 
-  .tarif { grid-area: tarif; }
-  .tarif-jeune { grid-area: tarif-jeune; }
-  .forfait { grid-area: forfait; }
-  .tarif-association { grid-area: tarif-association; }
+  .tarif {
+    grid-area: tarif;
+  }
+  .tarif-jeune {
+    grid-area: tarif-jeune;
+  }
+  .forfait {
+    grid-area: forfait;
+  }
+  .tarif-association {
+    grid-area: tarif-association;
+  }
 
   .services img {
     margin: 15px 20px 15px 20px;
   }
 
-  .tarif-jeune, .tarif-association{
+  .tarif-jeune,
+  .tarif-association {
     height: 240px;
     width: 240px !important;
   }
@@ -566,6 +549,7 @@ header {
 .deplacement img {
   width: clamp(16.75rem, 80vw, 31.25rem);
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .deplacement p {
@@ -579,8 +563,8 @@ header {
 }
 
 @media (min-width: 1280px) {
-  .deplacement {
-    padding: 6rem 0;
+  .deplacement p {
+    margin: 2rem;
   }
 }
 /* Fin Section Frais de déplacement */
@@ -616,10 +600,6 @@ header {
 }
 
 @media (min-width: 1280px) {
-  .contact {
-    padding: 6rem 0;
-  }
-
   .contact-container {
     display: flex;
     flex-direction: column;
@@ -685,7 +665,7 @@ footer {
 }
 
 footer img {
-  height: clamp(30px, 5vw, 60px);
+  height: clamp(30px, 5vw, 40px);
   width: auto;
 }
 
@@ -726,8 +706,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+@media (min-width: 1280px) {
+  .icons-container {
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .signatures-container {
+    justify-content: space-evenly;
+  }
+}
 /* Fin Footer */
 
+/* Copyright */
 .copyright {
   background-color: var(--main-color);
   color: var(--text-color);
@@ -738,4 +730,24 @@ a {
 .anim-title {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+}
+/* Fin Copyright */
+
+@media (min-width: 1280px) {
+  .definition-osteopathie,
+  .deplacement,
+  .contact,
+  .temoignages {
+    padding: 3rem 1rem 4rem 1rem;
+  }
+
+  .a-propos,
+  .services,
+  footer {
+    padding: 3rem 1rem 3rem 1rem;
+  }
+
+  .pourquoi-osteopathe {
+    padding: 3rem 0;
+  }
 }
