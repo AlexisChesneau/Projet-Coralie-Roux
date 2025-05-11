@@ -258,6 +258,16 @@ header {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
+
+@media (min-width: 1280px) {
+.splide__track {
+  height: 80vh;
+}
+
+.splide__slide img {
+  height: 80vh;
+}
+}
 /* Fin Carousel  */
 
 /* Section Définition ostéopathie animale */
@@ -378,6 +388,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .animal h3 {
@@ -428,6 +439,10 @@ header {
     padding: 0 0 0 50px;
   }
 
+  .pourquoi-osteopathe img {
+    margin: 0 30px;
+}
+
   .animal:nth-child(even) {
     flex-direction: row;
     margin-left: 10rem;
@@ -448,6 +463,46 @@ header {
 
   .osteopathie-preventive-container p {
     width: 70%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .animal:nth-child(even) {
+    margin-left: calc(10vw + 5rem);
+  }
+
+  .animal:nth-child(odd) {
+    margin-right: calc(10vw + 5rem);
+  }
+}
+
+@media (min-width: 1700px) {
+  .animal:nth-child(even) {
+    margin-left: calc(12vw + 7rem);
+  }
+
+  .animal:nth-child(odd) {
+    margin-right: calc(12vw + 7rem);
+  }
+}
+
+@media (min-width: 1920px) {
+  .animal:nth-child(even) {
+    margin-left: calc(15vw + 10rem);
+  }
+
+  .animal:nth-child(odd) {
+    margin-right: calc(15vw + 10rem);
+  }
+}
+
+@media (min-width: 2100px) {
+  .animal:nth-child(even) {
+    margin-left: calc(20vw + 12rem);
+  }
+
+  .animal:nth-child(odd) {
+    margin-right: calc(20vw + 12rem);
   }
 }
 /* Fin Section Pourquoi faire appel osteopathe pour animaux */
