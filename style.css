@@ -26,6 +26,7 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  overflow-x: hidden;
 }
 
 h1,
@@ -81,6 +82,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  z-index: 1;
 }
 
 .contact-item i {
@@ -90,7 +92,6 @@ header {
 
 .contact-item a {
   position: relative;
-  z-index: 1;
   text-decoration: none;
   color: var(--light-text-color);
   font-size: clamp(0.8rem, 2vw, 1rem);
@@ -109,7 +110,35 @@ header {
     justify-content: space-around;
     height: 54px;
   }
+
+  .contact-item i {
+    display: inline-block;
+    transition: transform 0.1s;
+  }
+
+  .contact-item:hover i {
+    animation: shake-horizontal 0.4s infinite;
+  }
+
+  @keyframes shake-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-2px);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+    75% {
+      transform: translateX(-2px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
+
 /* Fin Header */
 
 /* Burger Menu  */
@@ -212,6 +241,16 @@ header {
     color: var(--main-color);
   }
 }
+
+@media (min-width: 1280px) {
+  .slideout-menu ul {
+    padding-right: 4rem;
+  }
+
+  .panel {
+    padding: 0.5rem 4rem;
+  }
+}
 /* Fin Burger Menu  */
 
 /* Carousel */
@@ -260,13 +299,13 @@ header {
 }
 
 @media (min-width: 1280px) {
-.splide__track {
-  height: 80vh;
-}
+  .splide__track {
+    height: 80vh;
+  }
 
-.splide__slide img {
-  height: 80vh;
-}
+  .splide__slide img {
+    height: 80vh;
+  }
 }
 /* Fin Carousel  */
 
@@ -310,6 +349,29 @@ header {
     margin-right: 170px;
     padding-top: 0;
     line-height: 1.9;
+  }
+
+  /* Animation sur l’image */
+  .definition-osteopathie-container {
+    flex: 1 1 40%;
+    opacity: 0;
+    animation-name: slideInRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }
 
@@ -358,7 +420,30 @@ header {
     padding-bottom: 50px;
     line-height: 1.9;
   }
+
+  .a-propos-container {
+    flex: 1 1 40%;
+    opacity: 0;
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
+
 /* Fin Section A propos */
 
 /* Section Pourquoi faire appel osteopathe pour animaux */
@@ -441,7 +526,7 @@ header {
 
   .pourquoi-osteopathe img {
     margin: 0 30px;
-}
+  }
 
   .animal:nth-child(even) {
     flex-direction: row;
@@ -505,6 +590,49 @@ header {
     margin-right: calc(20vw + 12rem);
   }
 }
+
+/* Animation */
+@media (min-width: 1280px) {
+  .animal {
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  .animal:nth-child(odd) {
+    animation-name: slideInLeft;
+  }
+
+  .animal:nth-child(even) {
+    animation-name: slideInRight;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+/* Fin Animation */
 /* Fin Section Pourquoi faire appel osteopathe pour animaux */
 
 /* Section Services */
@@ -589,7 +717,53 @@ header {
     height: 240px;
     width: 240px !important;
   }
+
+  /* Animation */
+  .tarif {
+    grid-area: tarif;
+    opacity: 0;
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  .forfait {
+    grid-area: forfait;
+    opacity: 0;
+    animation-name: slideInRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
+/* Fin Animation */
 /* Fin Section Services */
 
 /* Section Frais de déplacement */
@@ -659,10 +833,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .contact-container p {
-    width: 70%;
   }
 }
 /* Fin Section Contact */
@@ -766,6 +936,14 @@ a {
   .icons-container {
     justify-content: center;
     gap: 100px;
+  }
+
+  footer img {
+    transition: transform 0.5s ease;
+  }
+
+  footer img:hover {
+    transform: scale(1.2);
   }
 
   .signatures-container {
