@@ -60,6 +60,45 @@ section {
 
 /* Fin Global */
 
+/* Scroll Top */
+@media (min-width: 768px) {
+  .scroll-top {
+    bottom: 15%;
+    right: 0%;
+    width: 50px;
+    height: 50px;
+    background: var(--text-color);
+    color: #f1f1f1;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    animation-name: appear;
+    animation-timeline: scroll(y);
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      display: none;
+      position: fixed;
+    }
+    100% {
+      opacity: 1;
+      display: block;
+      position: fixed;
+      z-index: 100;
+    }
+  }
+
+  .scroll-top:hover {
+    background-color: #888;
+  }
+}
+
+/* Fin Scroll Top */
+
 /* Header */
 header {
   position: fixed;
@@ -863,14 +902,13 @@ header {
     align-items: center;
   }
 
-.contact-container a {
-  transition: transform 0.5s ease;
-}
+  .contact-container a {
+    transition: transform 0.5s ease;
+  }
 
-.contact-container a:hover {
-  transform: scale(1.2);
-}
-
+  .contact-container a:hover {
+    transform: scale(1.2);
+  }
 }
 /* Fin Section Contact */
 
@@ -982,14 +1020,14 @@ a {
   footer img:hover {
     transform: scale(1.2);
   }
-  
-  footer a {
-  transition: transform 0.5s ease;
-}
 
-footer a:hover {
-  transform: scale(1.2);
-}
+  footer a {
+    transition: transform 0.5s ease;
+  }
+
+  footer a:hover {
+    transform: scale(1.2);
+  }
 
   .signatures-container {
     justify-content: space-evenly;
