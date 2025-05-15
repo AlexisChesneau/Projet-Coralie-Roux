@@ -240,6 +240,11 @@ header {
     background: none;
     color: var(--main-color);
   }
+
+  .slideout-menu ul li a.active {
+    background: none;
+    color: var(--main-color);
+  }
 }
 
 @media (min-width: 1280px) {
@@ -473,7 +478,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .animal h3 {
@@ -511,7 +515,22 @@ header {
   padding: 1.75rem;
 }
 
+@media (min-width: 999px) {
+  .animal {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .animal-content {
+    padding: 0 2rem;
+  }
+}
+
 @media (min-width: 1280px) {
+  .animal {
+    justify-content: flex-end;
+  }
+
   .pourquoi-osteopathe .animal {
     padding: 1.5rem 2rem;
   }
@@ -591,6 +610,15 @@ header {
   }
 }
 
+@media (min-width: 2440px) {
+  .animal:nth-child(even) {
+    margin-left: calc(30vw + 15rem);
+  }
+
+  .animal:nth-child(odd) {
+    margin-right: calc(30vw + 15rem);
+  }
+}
 /* Animation */
 @media (min-width: 1280px) {
   .animal {
@@ -834,6 +862,15 @@ header {
     flex-direction: column;
     align-items: center;
   }
+
+.contact-container a {
+  transition: transform 0.5s ease;
+}
+
+.contact-container a:hover {
+  transform: scale(1.2);
+}
+
 }
 /* Fin Section Contact */
 
@@ -945,6 +982,14 @@ a {
   footer img:hover {
     transform: scale(1.2);
   }
+  
+  footer a {
+  transition: transform 0.5s ease;
+}
+
+footer a:hover {
+  transform: scale(1.2);
+}
 
   .signatures-container {
     justify-content: space-evenly;
