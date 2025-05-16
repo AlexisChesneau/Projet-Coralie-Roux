@@ -28,3 +28,12 @@ document.querySelectorAll("#menu a").forEach((link) => {
     slideout.close();
   });
 });
+
+document.addEventListener("click", (event) => {
+  const isClickInsideMenu = menu.contains(event.target);
+  const isClickOnButton = menuButton.contains(event.target);
+
+  if (slideout.isOpen() && !isClickInsideMenu && !isClickOnButton) {
+    slideout.close();
+  }
+});

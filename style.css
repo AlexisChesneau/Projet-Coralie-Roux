@@ -61,8 +61,13 @@ section {
 /* Fin Global */
 
 /* Scroll Top */
+.scroll-top {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .scroll-top {
+    display: block;
     bottom: 15%;
     right: 0%;
     width: 50px;
@@ -151,7 +156,6 @@ header {
   }
 
   .contact-item i {
-    display: inline-block;
     transition: transform 0.1s;
   }
 
@@ -177,7 +181,6 @@ header {
     }
   }
 }
-
 /* Fin Header */
 
 /* Burger Menu  */
@@ -300,12 +303,12 @@ header {
 /* Carousel */
 .splide__slide img {
   width: 100%;
-  height: 60vh;
+  height: calc(100vh - 137px);
   object-fit: cover;
 }
 
 .splide__track {
-  height: 60vh;
+  height: calc(100vh - 137px);
   position: relative;
 }
 
@@ -318,7 +321,6 @@ header {
   text-align: center;
   width: 100%;
   padding: 0 1.5rem;
-  max-width: 600px;
 }
 
 .carousel-text h2 {
@@ -343,12 +345,27 @@ header {
 }
 
 @media (min-width: 1280px) {
-  .splide__track {
-    height: 80vh;
+  .carousel-text h2 {
+    font-size: 4rem;
   }
 
+  .carousel-text p {
+    font-size: 1.33rem;
+  }
+
+  .splide__track,
   .splide__slide img {
-    height: 80vh;
+    height: calc(100vh - 139px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .carousel-text h2 {
+    font-size: 5rem;
+  }
+
+  .carousel-text p {
+    font-size: 1.66rem;
   }
 }
 /* Fin Carousel  */
@@ -418,7 +435,7 @@ header {
     }
   }
 }
-
+/* Fin Animation sur l’image */
 /* Fin Section Définition ostéopathie animale */
 
 /* Section A propos */
@@ -554,22 +571,35 @@ header {
   padding: 1.75rem;
 }
 
-@media (min-width: 999px) {
+@media (min-width: 1024px) {
   .animal {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
   }
 
   .animal-content {
     padding: 0 2rem;
   }
+
+  .animal:nth-child(even) {
+    flex-direction: row;
+    margin-left: 3rem;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .animal:nth-child(odd) {
+    flex-direction: row-reverse;
+    margin-right: 3rem;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .pourquoi-osteopathe {
+    padding: 3rem 0;
+    background-color: var(--main-color);
+  }
 }
 
 @media (min-width: 1280px) {
-  .animal {
-    justify-content: flex-end;
-  }
-
   .pourquoi-osteopathe .animal {
     padding: 1.5rem 2rem;
   }
@@ -582,20 +612,12 @@ header {
     padding: 0 0 0 50px;
   }
 
-  .pourquoi-osteopathe img {
-    margin: 0 30px;
-  }
-
   .animal:nth-child(even) {
-    flex-direction: row;
     margin-left: 10rem;
-    border-radius: 10px 0 0 10px;
   }
 
   .animal:nth-child(odd) {
-    flex-direction: row-reverse;
     margin-right: 10rem;
-    border-radius: 0 10px 10px 0;
   }
 
   .osteopathie-preventive-container {
@@ -621,31 +643,31 @@ header {
 
 @media (min-width: 1700px) {
   .animal:nth-child(even) {
-    margin-left: calc(12vw + 7rem);
+    margin-left: calc(15vw + 7rem);
   }
 
   .animal:nth-child(odd) {
-    margin-right: calc(12vw + 7rem);
+    margin-right: calc(15vw + 7rem);
   }
 }
 
 @media (min-width: 1920px) {
   .animal:nth-child(even) {
-    margin-left: calc(15vw + 10rem);
+    margin-left: calc(20vw + 10rem);
   }
 
   .animal:nth-child(odd) {
-    margin-right: calc(15vw + 10rem);
+    margin-right: calc(20vw + 10rem);
   }
 }
 
 @media (min-width: 2100px) {
   .animal:nth-child(even) {
-    margin-left: calc(20vw + 12rem);
+    margin-left: calc(25vw + 12rem);
   }
 
   .animal:nth-child(odd) {
-    margin-right: calc(20vw + 12rem);
+    margin-right: calc(25vw + 12rem);
   }
 }
 
@@ -886,7 +908,7 @@ header {
 }
 
 .email {
-  margin-top: 2.5rem;
+  margin: 2.5rem;
 }
 
 .numero,
@@ -895,19 +917,40 @@ header {
   font-weight: bold;
 }
 
+.icons-container {
+  width: 100%;
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+}
+
+.icons-container img {
+  height: 40px;
+}
+
+.contact-container .numero,
+.contact-container .email {
+  transition: transform 0.5s ease;
+}
+
+.contact-container .numero:hover,
+.contact-container .email:hover {
+  transform: scale(1.1);
+}
+
+.icons-container img {
+  transition: transform 0.5s ease;
+}
+
+.icons-container img:hover {
+  transform: scale(1.1);
+}
+
 @media (min-width: 1280px) {
   .contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .contact-container a {
-    transition: transform 0.5s ease;
-  }
-
-  .contact-container a:hover {
-    transform: scale(1.2);
   }
 }
 /* Fin Section Contact */
@@ -938,6 +981,10 @@ header {
   padding: 40px 0;
 }
 
+.swiper-3d {
+  perspective: 800px !important;
+}
+
 .swiper-slide {
   background: var(--secondary-color);
   border-radius: 12px;
@@ -950,6 +997,18 @@ header {
 .swiper-slide img {
   width: 100%;
   display: block;
+}
+
+@media (min-width: 1280px) {
+  .swiper-3d {
+    perspective: 1200px !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .swiper-3d {
+    perspective: 1600px !important;
+  }
 }
 /* Fin Carousel Mobile */
 /* Fin Section Témoignages */
@@ -969,18 +1028,12 @@ footer img {
   width: auto;
 }
 
-.icons-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .signatures-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .signatures-container p {
@@ -1007,30 +1060,30 @@ a {
   color: inherit;
 }
 
-@media (min-width: 1280px) {
-  .icons-container {
-    justify-content: center;
-    gap: 100px;
-  }
+footer img {
+  transition: transform 0.5s ease;
+}
 
-  footer img {
-    transition: transform 0.5s ease;
-  }
+footer img:hover {
+  transform: scale(1.1);
+}
 
-  footer img:hover {
-    transform: scale(1.2);
-  }
+footer a {
+  transition: transform 0.5s ease;
+}
 
-  footer a {
-    transition: transform 0.5s ease;
-  }
+footer a:hover {
+  transform: scale(1.1);
+}
 
-  footer a:hover {
-    transform: scale(1.2);
-  }
-
+@media (min-width: 1024px) {
   .signatures-container {
-    justify-content: space-evenly;
+    gap: 6rem;
+  }
+}
+@media (min-width: 1280px) {
+  .signatures-container {
+    gap: 16rem;
   }
 }
 /* Fin Footer */
